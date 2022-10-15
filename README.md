@@ -20,4 +20,4 @@
 
 <br/>
 
-> 상세 내용은 wiki에 정리
+> 상세 내용은 [wiki](https://github.com/t0e8r1r4y/ArticleCuration/wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%AA%A9%EC%A0%81)에 정리
