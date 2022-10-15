@@ -1,5 +1,7 @@
 # :star2: ArticleCuration
 
+이전 프로젝트 : [Notification Serivce](https://github.com/t0e8r1r4y/NaverAPI/blob/main/README.md)
+
 > Naver API에서 조회한 블로그 Article 링크를 기반으로 페이지를 크롤링하여 콘텐츠 큐레이터 서비스를 만들어봅니다.
 > 해당 프로젝트는 이전 프로젝트를 구현하면서 해결하고 싶은 문제와 고도화 하고 싶은 내용을 반영하여 이전 프로젝트에서 해당 기능을 분리하고자 합니다.
 
