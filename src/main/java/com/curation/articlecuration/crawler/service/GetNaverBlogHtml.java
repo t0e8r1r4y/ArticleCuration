@@ -4,20 +4,37 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
 @Service
 @Slf4j
 public class GetNaverBlogHtml {
-    // 조회수,  공감수, 대표이미지, 태그 텍스트,  댓글
     private static final String basicUrl = "http://blog.naver.com";
 
+    // 검증필요 - 블로그마다 이미지 제공 방식이 다를 수 있음
+    public List<String> getImgLink(String url) throws IOException {
+        Document doc = getIframeHtml(url);
+        Elements imgs = doc.select("img");
+        StringBuilder sb = new StringBuilder();
+        List<String> scrList = new ArrayList<>();
 
+        for (Element img: imgs) {
+            sb.append(img.getElementsByAttribute("src").toString());
+            if(sb.indexOf("postfiles") != -1) {
+                scrList.add(sb.substring(10,sb.indexOf(" data-width")-1).toString());
+            }
+            sb.setLength(0);
+        }
+
+        return scrList;
+    }
 
 
     // OK - 댓글 개수

@@ -18,9 +18,12 @@ class ArticlecurationApplicationTests {
 
 		String url = "https://blog.naver.com/dongi0508/222883293822";
 
-		String result = getNaverBlogHtml.getReplyCnt(url);
+//		String result = getNaverBlogHtml.getFooterHashTag(url);
+		List<String> imgs = getNaverBlogHtml.getImgLink(url);
 
-		System.out.println(result);
+		for(String img : imgs) {
+			System.out.println(img);
+		}
 
 	}
 
