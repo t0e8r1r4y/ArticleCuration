@@ -41,6 +41,7 @@ public class WebDriverUtil {
         driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
         log.info(driver.getTitle() + "-----------------------------");
         WebElement searchLabel = driver.findElement(By.id(id));
+//        WebElement searchLabel = driver.findElement(By.cssSelector("#Sympathy222872024109 > div > span > em.u_cnt._count"));
         log.info(searchLabel.getText() + "-----------------------------");
         quitDriver();
     }

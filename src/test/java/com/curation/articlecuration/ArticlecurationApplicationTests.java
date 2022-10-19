@@ -23,10 +23,16 @@ class ArticlecurationApplicationTests {
 	private WebDriverUtil webDriverUtil;
 
 	@Test
+	void test1() throws IOException {
+		String url = "https://blog.naver.com/dongi0508/222883293822";
+		System.out.println(getNaverBlogHtml.getPostComment(url));
+	}
+
+	@Test
 	void selenium() {
 		String url =  "http://blog.naver.com/PostView.naver?blogId=moneybeast&logNo=222872024109&redirect=Dlog&widgetTypeCall=true&topReferer=https%3A%2F%2Fsearch.naver.com%2Fsearch.naver%3Fwhere%3Dview%26sm%3Dtab_jum%26query%3D%25EA%25B0%2595%25EC%259D%25B8%25EA%25B5%25AC&directAccess=false";
 		webDriverUtil.chrome();
-		webDriverUtil.useDriver(url, "Sympathy222872024109");
+		webDriverUtil.useDriver(url, "post_footer_contents");
 		// 2022-10-19 16:04:39.985  INFO 27846 --- [           main] c.c.a.crawler.util.WebDriverUtil         : 수리남 실화바탕 조봉행 체포(수리남 전요환). 강인구 K씨도 실존인물이라니.. 한국 국제마약조직 검거 최초 사례 (feat. 리스펙) : 네이버 블로그-----------------------------
 		//2022-10-19 16:04:40.064  INFO 27846 --- [           main] c.c.a.crawler.util.WebDriverUtil         : 공감 177
 	}

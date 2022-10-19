@@ -18,6 +18,11 @@ import java.util.List;
 public class GetNaverBlogHtml {
     private static final String basicUrl = "http://blog.naver.com";
 
+    public String getPostComment(String url) throws IOException {
+        Document doc = getIframeHtml(url);
+        return doc.select("div.area_sympathy pcol2").attr("id").toString();
+    }
+
     // 검증필요 - 블로그마다 이미지 제공 방식이 다를 수 있음
     public List<String> getImgLink(String url) throws IOException {
         Document doc = getIframeHtml(url);
