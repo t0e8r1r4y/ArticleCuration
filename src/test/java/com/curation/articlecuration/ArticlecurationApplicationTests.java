@@ -1,6 +1,7 @@
 package com.curation.articlecuration;
 
 import com.curation.articlecuration.crawler.service.GetNaverBlogHtml;
+import com.curation.articlecuration.crawler.util.WebDriverUtil;
 import com.curation.articlecuration.vision.service.VisionService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,16 @@ class ArticlecurationApplicationTests {
 
 	@Autowired
 	private VisionService visionService;
+
+	@Autowired
+	private WebDriverUtil webDriverUtil;
+
+	@Test
+	void selenium() {
+		webDriverUtil.chrome();
+		webDriverUtil.useDriver("https://www.youtube.com/c/youtubekorea/videos", "label-text");
+	}
+
 	@Test
 	void contextLoads() throws IOException {
 
